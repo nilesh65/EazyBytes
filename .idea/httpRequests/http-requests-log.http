@@ -1,0 +1,108 @@
+POST http://localhost:8071/encrypt
+Content-Type: text/plain
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+john@eazybank.com
+
+<> 2025-06-26T081152.200.txt
+
+###
+
+POST http://localhost:8071/encrypt
+Content-Type: text/plain
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+john@eazybank.com
+
+<> 2025-06-26T081137.200.txt
+
+###
+
+POST http://localhost:8071/encrypt
+Content-Length: 17
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+john@eazybank.com
+
+<> 2025-06-26T080815.400.json
+
+###
+
+POST http://localhost:8071/decrypt
+Content-Type: text/plain
+Content-Length: 96
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+801205b32641e21fa42800f14baee03263fe4c608e90ac6a567d1d6b47c33f1b9a256a44429f9270bd7d9087dd0ba350
+
+<> 2025-06-26T080755.200.txt
+
+###
+
+POST http://localhost:8071/decrypt
+Content-Type: text/plain
+Content-Length: 100
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+801205b32641e21fa42800f14baee03263fe4c608e90ac6a567d1d6b47c33f1b9a256a44429f9270bd7d9087dd0ba350
+}
+
+<> 2025-06-26T080724.400.json
+
+###
+
+POST http://localhost:8071/decrypt
+Content-Length: 100
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+801205b32641e21fa42800f14baee03263fe4c608e90ac6a567d1d6b47c33f1b9a256a44429f9270bd7d9087dd0ba350
+}
+
+<> 2025-06-26T080613.400.json
+
+###
+
+POST http://localhost:8071/encrypt
+Content-Length: 23
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+"john@eazybank.com"
+}
+
+<> 2025-06-25T213923.400.json
+
+###
+
+POST http://localhost:8071/encrypt
+Content-Length: 23
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+"john@eazybank.com"
+}
+
+<> 2025-06-25T213739.400.json
+
+###
+

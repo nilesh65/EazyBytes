@@ -1,5 +1,6 @@
 package eazybytes.cards.controller;
 
+import eazybytes.accounts.dto.CardsContactInfoDto;
 import eazybytes.cards.constants.CardsConstants;
 import eazybytes.cards.dto.CardsDto;
 import eazybytes.cards.dto.ErrorResponseDto;
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -28,13 +30,20 @@ import org.springframework.web.bind.annotation.*;
         name = "CRUD REST APIs for Cards in EazyBank",
         description = "CRUD REST APIs in EazyBank to CREATE, UPDATE, FETCH AND DELETE card details"
 )
+
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
-@AllArgsConstructor
 @Validated
+@EnableConfigurationProperties(value = CardsContactInfoDto.class)
 public class CardsController {
 
     private ICardsService iCardsService;
+    private CardsContactInfoDto cardsContactInfoDto;
+
+    public CardsController(ICardsService iCardsService, CardsContactInfoDto cardsContactInfoDto) {
+        this.iCardsService = iCardsService;
+        this.cardsContactInfoDto = cardsContactInfoDto;
+    }
 
     @Operation(
             summary = "Create Card REST API",
@@ -160,5 +169,8 @@ public class CardsController {
                     .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
         }
     }
-
+    @GetMapping("/contact-info")
+    public ResponseEntity<?> getBuildInfo() {
+        return ResponseEntity.status(HttpStatus.OK).body(cardsContactInfoDto);
+    }
 }

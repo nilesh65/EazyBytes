@@ -1,0 +1,8 @@
+### GET request to example server
+POST localhost:8071/encrypt
+Content-Type: text/plain
+
+john@eazybank.com
+
+
+###

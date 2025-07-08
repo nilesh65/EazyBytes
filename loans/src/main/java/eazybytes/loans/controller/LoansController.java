@@ -2,6 +2,7 @@ package eazybytes.loans.controller;
 
 import eazybytes.loans.constants.LoansConstants;
 import eazybytes.loans.dto.ErrorResponseDto;
+import eazybytes.loans.dto.LoansContactInfoDto;
 import eazybytes.loans.dto.LoansDto;
 import eazybytes.loans.dto.ResponseDto;
 import eazybytes.loans.service.ILoansService;
@@ -14,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,11 +32,17 @@ import org.springframework.web.bind.annotation.*;
 )
 @RestController
 @RequestMapping(path = "/api", produces = {MediaType.APPLICATION_JSON_VALUE})
-@AllArgsConstructor
 @Validated
+@EnableConfigurationProperties(value = LoansContactInfoDto.class)
 public class LoansController {
 
     private ILoansService iLoansService;
+    private LoansContactInfoDto loansContactInfoDto;
+
+    public LoansController(ILoansService iLoansService, LoansContactInfoDto loansContactInfoDto) {
+        this.iLoansService = iLoansService;
+        this.loansContactInfoDto = loansContactInfoDto;
+    }
 
     @Operation(
             summary = "Create Loan REST API",
@@ -163,5 +171,8 @@ public class LoansController {
                     .body(new ResponseDto(LoansConstants.STATUS_417, LoansConstants.MESSAGE_417_DELETE));
         }
     }
-
+    @GetMapping("/contact-info")
+    public ResponseEntity<?> getBuildInfo() {
+        return ResponseEntity.status(HttpStatus.OK).body(loansContactInfoDto);
+    }
 }

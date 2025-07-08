@@ -1,0 +1,7 @@
+### GET request to example server
+POST localhost:8071/decrypt
+Content-Type: text/plain
+
+801205b32641e21fa42800f14baee03263fe4c608e90ac6a567d1d6b47c33f1b9a256a44429f9270bd7d9087dd0ba350
+
+###
