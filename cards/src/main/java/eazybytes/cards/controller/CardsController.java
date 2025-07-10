@@ -1,6 +1,6 @@
 package eazybytes.cards.controller;
 
-import eazybytes.accounts.dto.CardsContactInfoDto;
+import eazybytes.cards.dto.CardsContactInfoDto;
 import eazybytes.cards.constants.CardsConstants;
 import eazybytes.cards.dto.CardsDto;
 import eazybytes.cards.dto.ErrorResponseDto;
@@ -14,7 +14,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

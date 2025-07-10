@@ -1,4 +1,4 @@
-package eazybytes.accounts.dto;
+package eazybytes.cards.dto;
 
 import lombok.Getter;
 import lombok.Setter;

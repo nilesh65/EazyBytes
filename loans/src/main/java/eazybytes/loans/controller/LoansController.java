@@ -14,7 +14,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -36,8 +35,8 @@ import org.springframework.web.bind.annotation.*;
 @EnableConfigurationProperties(value = LoansContactInfoDto.class)
 public class LoansController {
 
-    private ILoansService iLoansService;
-    private LoansContactInfoDto loansContactInfoDto;
+    private final ILoansService iLoansService;
+    private final LoansContactInfoDto loansContactInfoDto;
 
     public LoansController(ILoansService iLoansService, LoansContactInfoDto loansContactInfoDto) {
         this.iLoansService = iLoansService;
